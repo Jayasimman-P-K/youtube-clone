@@ -6,13 +6,34 @@ import {
   UserIcon,
   YoutubeIcon,
 } from "../utils/icons";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
-    <div className=" flex justify-between m-5 items-center">
-      <div className="flex">
-        <img className="w-full h-6" src={HamburgerIcon} alt="" srcset="" />
-        <img className="h-6 w-full ml-7" src={YoutubeIcon} alt="" srcset="" />
+    <div className="flex justify-between m-5 items-center">
+      <div className="flex items-center ">
+        <button className=" p-2 rounded-full hover:bg-gray-200 transition-all">
+          <img
+            className="w-10 h-6"
+            onClick={toggleMenuHandler}
+            src={HamburgerIcon}
+            alt=""
+          />
+        </button>
+
+        <img
+          className="h-6 w-full ml-7 cursor-pointer"
+          src={YoutubeIcon}
+          alt=""
+          srcset=""
+        />
       </div>
 
       <div className="flex items-center">
@@ -29,7 +50,7 @@ const Header = () => {
         </button>
       </div>
 
-      <div className="border border-gray-300 rounded-full p-2">
+      <div className="border border-gray-300 rounded-full p-2 cursor-pointer">
         <img className="w-full h-6" src={UserIcon} alt="" />
       </div>
     </div>
