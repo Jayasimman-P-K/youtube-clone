@@ -5,10 +5,10 @@ const VideoCard = ({ data }) => {
 
   const { thumbnails, channelTitle, title } = snippet;
   // publishedAt
-
+  // py-2 my-2 mr-5
   return (
-    <div className="w-72 py-2 my-2 mr-5 hover:scale-95 transition-all">
-      <img className="rounded-lg" src={thumbnails?.medium?.url} alt="" />
+    <div className="w-[410px] pr-5 mb-8  hover:scale-95 transition-all">
+      <img className="rounded-lg w-full" src={thumbnails?.medium?.url} alt="" />
       <div>
         <ul>
           <li className="font-bold py-2">{title}</li>

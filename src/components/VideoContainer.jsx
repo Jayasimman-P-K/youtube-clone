@@ -21,7 +21,7 @@ const VideoContainer = () => {
 
   return (
     <div
-      className={"flex flex-wrap my-4 " + (!isMenuOpen && " justify-center")}
+      className={"flex flex-wrap my-4  " + (!isMenuOpen && " justify-center")}
     >
       {videoData?.map((data) => {
         return (

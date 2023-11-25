@@ -9,7 +9,7 @@ const SideBar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="w-2/12 ">
+    <div className="w-2/12 border-2">
       <ul>
         <li>
           <Link to={"/"}>Home</Link>

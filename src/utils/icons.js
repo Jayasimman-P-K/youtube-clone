@@ -11,3 +11,5 @@ export const MicIcon =
 
 export const UserIcon =
   "https://img.icons8.com/puffy-filled/32/experimental-user-puffy-filled.png";
+
+export const SEND_ICON = "https://img.icons8.com/windows/32/sent.png";
