@@ -1,11 +1,10 @@
 import React from "react";
 
-const VideoCard = ({ data, imgW }) => {
+const SuggestionCard = ({ data }) => {
   const { snippet, statistics } = data;
 
   const { thumbnails, channelTitle, title, publishedAt } = snippet;
-  // publishedAt
-  // py-2 my-2 mr-5
+
   const convertedViews = (views) => {
     return views > 1000000
       ? Math.floor(views / 1000000) + "M"
@@ -43,13 +42,15 @@ const VideoCard = ({ data, imgW }) => {
   };
 
   return (
-    <div className={" pr-5 mb-8  hover:scale-95 transition-all " + imgW}>
-      <img className="rounded-lg w-full" src={thumbnails?.medium?.url} alt="" />
-      <div>
-        <ul>
-          <li className={"font-bold py-2 "}>{title}</li>
-          <li className="">{channelTitle}</li>
-          <li className="flex text-neutral-700">
+    <div className="flex my-2 h-28 hover:scale-95 hover:shadow-none shadow rounded-lg transition-all">
+      <img className="rounded-lg h-28" src={thumbnails?.medium?.url} alt="" />
+      <div className=" pl-2 ">
+        <ul className="">
+          <li className="text-sm font-semibold h-14 overflow-hidden py-2.5">
+            {title}
+          </li>
+          <li className="text-xs font-semibold h-7 pt-1.5">{channelTitle}</li>
+          <li className="text-xs font-semibold h-7 ">
             <span>{convertedViews(statistics?.viewCount)} Views</span>{" "}
             <span className="px-1">•</span>
             <span>{convertTime(publishedAt)}</span>
@@ -60,4 +61,4 @@ const VideoCard = ({ data, imgW }) => {
   );
 };
 
-export default VideoCard;
+export default SuggestionCard;

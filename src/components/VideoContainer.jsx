@@ -19,17 +19,21 @@ const VideoContainer = () => {
 
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
+  if (!videoData) return null;
+
   return (
-    <div
-      className={"flex flex-wrap my-4  " + (!isMenuOpen && " justify-center")}
-    >
-      {videoData?.map((data) => {
-        return (
-          <Link key={data.id} to={"/watch?v=" + data.id}>
-            <VideoCard data={data} />
-          </Link>
-        );
-      })}
+    <div className="h-screen overflow-y-scroll no-scrollbar">
+      <div
+        className={"flex flex-wrap my-4  " + (!isMenuOpen && " justify-center")}
+      >
+        {videoData?.map((data) => {
+          return (
+            <Link key={data.id} to={"/watch?v=" + data.id}>
+              <VideoCard data={data} imgW={" w-[410px]"} />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

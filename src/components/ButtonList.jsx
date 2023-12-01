@@ -4,14 +4,20 @@ import { useSelector } from "react-redux";
 
 const ButtonList = () => {
   const filterBtnLists = [
-    "All",
-    "trending",
-    "games",
-    "news",
-    "live",
-    "music",
-    "technology",
-    "career",
+    "Trending",
+    "Trailers",
+    "Games",
+    "News",
+    "Live",
+    "Fashion",
+    "Music",
+    "Filmi",
+    "TV",
+    "Cinemas",
+    "Podcasts",
+    "Technology",
+    "Career",
+    "Hollywood",
   ];
 
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -23,11 +29,13 @@ const ButtonList = () => {
         (!isMenuOpen && " justify-center")
       }
     >
+      <FilterButton btnName={"All"} className={"bg-black text-white"} />
       {filterBtnLists?.map((list, index) => (
-        <FilterButton btnName={list} key={index} />
-      ))}
-      {filterBtnLists?.map((list, index) => (
-        <FilterButton btnName={list} key={index * 0.5} />
+        <FilterButton
+          btnName={list}
+          key={index}
+          className={" bg-neutral-200"}
+        />
       ))}
     </div>
   );

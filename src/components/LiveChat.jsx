@@ -8,7 +8,7 @@ const ChatMessages = ({ data }) => {
   const { name, message } = data;
 
   return (
-    <div className="border my-2 flex p-2 rounded-lg hover:bg-red-100">
+    <div className="border m-2 mx-4 flex p-2 rounded-lg hover:bg-red-100">
       <img
         className="h-6 p-0.5 border rounded-full"
         src={UserIcon}

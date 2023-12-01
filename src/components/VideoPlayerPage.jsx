@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
 import LiveChat from "./LiveChat";
 import { closeMenu } from "../utils/appSlice";
+import Suggestions from "./Suggestions";
 
 const VideoPlayerPage = () => {
   const [searchParams] = useSearchParams();
@@ -22,7 +23,11 @@ const VideoPlayerPage = () => {
         <div>
           <iframe
             className="w-full h-[500px] rounded-lg"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+            src={
+              "https://www.youtube.com/embed/" +
+              searchParams.get("v") +
+              "?autoplay=1"
+            }
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -34,10 +39,9 @@ const VideoPlayerPage = () => {
         </div>
       </div>
 
-      <div className="w-3/12">
-        <div className="">
-          <LiveChat />
-        </div>
+      <div className="w-[27%]">
+        <LiveChat />
+        <Suggestions />
       </div>
     </div>
   );

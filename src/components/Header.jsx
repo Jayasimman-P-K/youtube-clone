@@ -38,7 +38,7 @@ const Header = () => {
 
   const searchApi = async () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchText);
-    const json = await data.json();
+    const json = await data?.json();
     setSuggestions(json[1]);
     dispatch(cacheResults({ [searchText]: json[1] }));
   };
@@ -62,7 +62,6 @@ const Header = () => {
           className="h-6 w-full ml-7 cursor-pointer"
           src={YoutubeIcon}
           alt=""
-          srcset=""
         />
       </div>
 
